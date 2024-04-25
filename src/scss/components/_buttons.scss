@@ -1,0 +1,150 @@
+[type=button]{
+    -webkit-appearance: none;
+   -moz-appearance: none;
+    appearance: none;
+}
+
+.btn{
+    @include generate-transition(all, 500ms, ease);
+    &.btn-primary-dark-icon{
+        padding: 0;
+        font-size: $bodyS;
+        font-weight: 500;
+        color: $black;
+        letter-spacing: 1.8px;
+        line-height: 16px;
+        border: 0;
+        background-color: transparent;
+        font-family: "Muli", sans-serif;
+        transition: 0.3s all ease-in-out;
+
+        .btn-icon-box{
+            background: $button-black;
+            svg path{
+                fill: $white;
+                stroke: $white;
+                @include generate-transition(all, 500ms, ease);
+            }
+        }
+        span{
+            padding-right: 13px;
+        }
+        &:hover{
+            .btn-icon-box{
+                transform: translateX(10px);
+                // background: $primary;
+            }
+        }
+    }
+    &.btn-primary-light-icon{
+        padding: 0;
+        font-size: $bodyS;
+        font-weight: 500;
+        color: $white;
+        letter-spacing: 1.3px;
+        line-height: 16px;
+        border: 0;
+        background-color: transparent;
+        font-family: 'Muli', sans-serif;
+
+        .btn-icon-box{
+            background: $white;
+            transition: 0.3s all ease-in-out;
+            svg path{
+                fill: $black;
+                stroke: $black;
+                @include generate-transition(all, 500ms, ease);
+            }
+        }
+        span{
+            padding-right: 13px;
+        }
+        &:hover{
+            .btn-icon-box{
+                transform: translateX(10px);
+                // background: $primary;
+                // svg path{
+                //     fill: $white;
+                //     stroke: $white;
+                // }
+            }
+        }
+    }
+    .btn-icon-box{
+        width: 39px;
+        height: 39px;
+        border-radius: 100%;
+        @include generate-transition(all, 500ms, ease);
+        // &:hover{
+        //     transform: scale(1.1);
+        // }
+    }
+}
+
+.btn-black,
+.btn-primary{
+    padding: 17px 32px 15px;
+    font-size: $bodyXS;
+    letter-spacing: 1.8px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-primary{
+    color: $black;
+    background-color: $white;
+    border-color: $white;
+    &:focus,
+    &:hover{
+        color: $white;
+        background-color: $black;
+        border-color: $black;
+    }
+    &.btn-primary-large{
+        padding: 17px 42px 15px;
+    }
+}
+
+.btn-black{
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+    &:hover{
+        color: $black;
+        background-color: $white;
+        border-color: $black;
+    }
+}
+
+.btn-text{
+    text-decoration: underline;
+    letter-spacing: 2.1px;
+    line-height: 18px;
+}
+
+.footer-contact{
+    .icon-box{
+        width: 42px;
+        height: 42px;
+        border-radius: 100%;
+        @include generate-transition(all, 500ms, ease);
+        &.dark-box{
+            background: rgba($button-black, $alpha: 0.24);
+        }
+    }
+    &:hover{
+        .icon-box{
+            &.dark-box{
+                background: $button-black;
+                svg *{
+                    fill: $white;
+                }
+            }
+        }
+    }
+    .text-xs{
+        letter-spacing: 1.8px;
+        line-height: 22px;
+    }
+}

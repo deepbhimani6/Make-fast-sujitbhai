@@ -1,0 +1,406 @@
+
+.slick-slider:not(.slick-initialized) .slick-track {
+    display: flex;
+}
+
+.slick-indicators {
+    @include media-breakpoint-down(md) {
+        padding-bottom: 20px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        top: auto;
+        bottom: -40px;
+        z-index: 50;
+        transform: none;
+        width: 45px;
+        height: 45px;
+        background-color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+
+        &:before {
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 26px;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+    }
+
+    .slick-prev {
+        left: 20px;
+
+        &:before {
+            background-image: url("../../assets/images/prev-slick.svg");
+            margin-right: 2px;
+        }
+    }
+
+    .slick-next {
+        left: 80px;
+
+        &:before {
+            background-image: url("../../assets/images/next-slick.svg");
+            margin-left: 2px;
+        }
+    }
+}
+
+.slick-indicators.slick-indicators-top{
+    .slick-prev,
+    .slick-next {
+        top: 50px;
+    }
+
+    .slick-prev {
+        left: auto;
+        right: 90px;
+    }
+
+    .slick-next {
+        left: auto;
+        right: 30px;
+    }
+}
+
+.slider-with-inner-body {
+    .card-with-inner-body {
+        position: relative;
+
+        .card-body {
+            font-size: 14px;
+            line-height: 1.8;
+
+            @include media-breakpoint-up(lg) {
+                padding: 50px;
+            }
+
+            .card-title {
+                font-size: $headingM;
+            }
+
+            p {
+                margin-bottom: 20px;
+                max-width: 520px;
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* product gallery Slider */
+.product-gallery {
+    @include media-breakpoint-down(sm) {
+        margin: 0px -14px;
+    }
+    img {
+        height: 530px;
+        @include media-breakpoint-down(md) {
+            height: 230px;
+        }
+    }
+
+    &.slick-indicators {
+        @include media-breakpoint-up(md) {
+
+            .slick-prev,
+            .slick-next {
+                bottom: 40px;
+            }
+
+            .slick-prev {
+                left: auto;
+                right: 90px;
+            }
+
+            .slick-next {
+                left: auto;
+                right: 30px;
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            .slick-prev,
+            .slick-next {
+                bottom: -60px;
+            }
+        }
+    }
+}
+
+/* END product gallery Slider */
+
+
+/* testimonial slider */
+.testimonial-slider {
+    h3 {
+        line-height: 1.6;
+        @include media-breakpoint-down(md) {
+            font-size: 22px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: $gray;
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+        }
+    }
+
+    .col-12 {
+        max-width: 100%;
+        @include media-breakpoint-up(lg) {
+            max-width: 70%;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 50%;
+        }
+    }
+
+    .slick-dots {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            bottom: auto;
+            right: 0;
+            flex-direction: column;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+
+            li {
+                height: auto;
+                margin-bottom: 5px;
+
+                button {
+                    height: 20px;
+
+                    &:before {
+                        content: "";
+                        width: 2px;
+                        background-color: $secondary;
+                        opacity: 1;
+                        transition: 0.2s all ease-in-out;
+                    }
+                }
+
+                &.slick-active button {
+                    height: 40px;
+
+                    &:before {
+                        height: 40px;
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-down(md) {
+            width: auto;
+            li {
+                width: auto;
+                margin-bottom: 5px;
+
+                button {
+                    width: 20px;
+
+                    &:before {
+                        content: "";
+                        height: 2px;
+                        background-color: $secondary;
+                        opacity: 1;
+                        transition: 0.2s all ease-in-out;
+                    }
+                }
+
+                &.slick-active button {
+                    width: 40px;
+
+                    &:before {
+                        width: 40px;
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* END testimonial slider */
+
+
+.slider-overflow-visable{
+    .slick-list {
+        overflow: visible;
+    }
+}
+
+.slick-slider{
+    .slick-arrow{
+        height: auto;
+        width: auto;
+        z-index: 9;
+        &:before{
+            font-size: 34px;
+            color: $black-shade-2;
+        }
+        &.slick-disabled{
+            &:before{
+                opacity: 0.13 !important;
+            }
+        }
+    }
+    &.slick-arrow-top-right{
+        .slick-next {
+            right: 8px;
+            top: -60px;
+        }
+        .slick-prev{
+            right: 60px;
+            top: -60px;
+            left: auto;
+        }
+    }
+    &.slick-light-arrow{
+        .slick-arrow{
+            &:before{
+                color: $white;
+            }
+        }
+    }
+}
+
+.case-studies-slider.slick-arrow-top-right{
+    .slick-next,
+    .slick-prev {
+        top: -25px;
+    }
+}
+
+
+.slick-overflow .slick-list{
+    overflow: visible;
+  }
+  
+.slick-vertical-dots{
+    ul.slick-dots {
+      width: auto;
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      right: 10px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      @include media-breakpoint-up(xxl){
+        right: 30px;
+      }
+      li{
+        margin: 2px 0px;
+        width: auto;
+        height: auto;
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        cursor: pointer;
+        &.slick-active{
+          // height: 25px;
+          button{
+            opacity: 0.3;
+          }
+        }
+        button{
+          padding: 0px;
+          width: 2px;
+          height: 18px;
+          background-color: $white;
+          opacity: 1;
+          transition: 0.2s all ease-in-out;
+          margin: 0 auto;
+        }
+      }
+    }
+}
+
+.slick-horizontal-dots{
+    ul.slick-dots{
+        width: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        z-index: 99;
+        li{
+            margin: 0px 4px;
+            width: auto;
+            height: auto;
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            cursor: pointer;
+            &.slick-active{
+              // height: 25px;
+              button{
+                opacity: 0.3;
+              }
+            }
+            button{
+              padding: 0px;
+              width: 20px;
+              height: 2px;
+              background-color: $black;
+              opacity: 1;
+              transition: 0.2s all ease-in-out;
+              margin: 0 auto;
+            }
+        }
+    }
+}
+
+.slick-slider{
+    ul.slick-dots{
+        li{
+            height: auto;
+            width: auto;
+            button{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+.slick-indicators-white {
+    .slick-prev,
+    .slick-next {
+        @include media-breakpoint-down(md){
+            display: none !important;
+        }
+        &:before{
+            opacity: 1;
+        }
+    }
+
+    .slick-prev {
+        &:before {
+            background-image: url("../../assets/images/icons/arrow-prev-white.svg") !important;
+        }
+    }
+
+    .slick-next {
+        &:before {
+            background-image: url("../../assets/images/icons/arrow-next-white.svg") !important;
+        }
+    }
+}

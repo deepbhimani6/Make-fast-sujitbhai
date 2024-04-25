@@ -1,1 +1,3 @@
-# Make-fast-sujitbhai
+# After Clone
+
+Use commend "npm i"
